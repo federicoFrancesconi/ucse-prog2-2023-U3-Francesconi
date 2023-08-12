@@ -15,7 +15,8 @@ const port = 4001;
 app.get("/checker", async (req, res) => {
   try {
     const timezone = req?.query?.zone;
-    const url = req?.query?.url;
+    //En lugar de pasarle la url por parámetro, la paso como una variable de entorno
+    const url = process.env.URL;
     console.log(`Timezone for: ${timezone}`);
 
     if (!timezone)
